@@ -3,19 +3,15 @@ import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
-	kit: {
-		adapter: adapter({
-			pages: 'build',
-			assets: 'build',
-			fallback: 'index.html',
-			precompress: false,
-			strict: true
-		}),
-		paths: {
-			base: process.env.NODE_ENV === 'production' ? '/ai-spy' : ''
-		}
-	},
-	preprocess: vitePreprocess()
+    kit: {
+        adapter: adapter({
+            fallback: '404.html'
+        }),
+        paths: {
+            base: process.env.NODE_ENV === 'production' ? '/AI-Spy' : '',
+        }
+    },
+    preprocess: vitePreprocess()
 };
 
 export default config;
